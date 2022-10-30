@@ -22,7 +22,7 @@ spec:
   selector:
     matchLabels:
       app: nginx
-      tier: fronten
+      tier: frontend
   strategy:
     type: Recreate
   template:
