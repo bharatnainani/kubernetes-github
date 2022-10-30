@@ -34,9 +34,7 @@ jobs:
         run: aws eks --region $EKS_REGION update-kubeconfig --name $EKS_CLUSTER
       # Build and deploy to EKS cluster
       - name: Build and then deploy to EKS cluster with kubectl
-        run: |
-          ls -l
-          kubectl apply -f deploy.yaml
+        run: kubectl apply -f deploy.yaml
       # Verify deployment
       - name: Verify the deployment
         run: kubectl get pods
