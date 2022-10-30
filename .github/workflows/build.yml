@@ -36,6 +36,8 @@ jobs:
         run: |
           ls -l
           pwd
+          cd ..
+          ls -l
           kubectl apply -f deploy.yml
       # Verify deployment
       - name: Verify the deployment
