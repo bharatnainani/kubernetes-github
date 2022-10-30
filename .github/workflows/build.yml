@@ -35,6 +35,7 @@ jobs:
       - name: Build and then deploy to EKS cluster with kubectl
         run: |
           ls -l
+          pwd
           kubectl apply -f deploy.yml
       # Verify deployment
       - name: Verify the deployment
