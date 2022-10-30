@@ -12,8 +12,6 @@ jobs:
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
-    env:
-      ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
     steps:
       # Install kubectl
       - name: Install kubectl
@@ -35,7 +33,9 @@ jobs:
         run: aws eks --region $EKS_REGION update-kubeconfig --name $EKS_CLUSTER
       # Build and deploy to EKS cluster
       - name: Build and then deploy to EKS cluster with kubectl
-        run: kubectl apply -f deploy.yml
+        run: |
+          ls -l
+          kubectl apply -f deploy.yml
       # Verify deployment
       - name: Verify the deployment
         run: kubectl get pods
