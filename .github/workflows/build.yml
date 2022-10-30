@@ -35,10 +35,7 @@ jobs:
       - name: Build and then deploy to EKS cluster with kubectl
         run: |
           ls -l
-          pwd
-          cd ..
-          ls -l
-          kubectl apply -f deploy.yml
+          kubectl apply -f deploy.yaml
       # Verify deployment
       - name: Verify the deployment
         run: kubectl get pods
