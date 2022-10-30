@@ -1,40 +1,40 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: wordpress
+  name: nginx
   labels:
-    app: wordpress
+    app: nginx
 spec:
   ports:
     - port: 80
   selector:
-    app: wordpress
+    app: nginx
     tier: frontend
   type: LoadBalancer
 ---
 apiVersion: apps/v1 
 kind: Deployment
 metadata:
-  name: wordpress
+  name: nginx
   labels:
-    app: wordpress
+    app: nginx
 spec:
   selector:
     matchLabels:
-      app: wordpress
-      tier: frontend
+      app: nginx
+      tier: fronten
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        app: wordpress
+        app: nginx
         tier: frontend
     spec:
       containers:
-        - image: wordpress:latest
-          name: wordpress
+        - image: nginx:latest
+          name: nginx
           env:
           ports:
             - containerPort: 80
-              name: wordpress
+              name: nginx
