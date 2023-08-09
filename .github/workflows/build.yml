@@ -1,5 +1,5 @@
 name: Deployment Pipeline
-run-name: "CICD deployed: @${{ github.actor }} 🚀 to ${{ github.event.inputs }} - Manual: ${{ github.event_name != 'push' }}. ⭐"
+run-name: "CICD deployed: @${{ github.actor }} 🚀 to ${{ github.event.inputs.deployment-environment }} - Manual: ${{ github.event_name != 'push' }}. ⭐"
 on:
   push:
     branches:
